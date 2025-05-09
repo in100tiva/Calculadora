@@ -1,0 +1,199 @@
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-colors);
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 400px;
+    padding: var(--spacing-4);
+  }
+  
+  /* Estilos da calculadora */
+  .calculator {
+    background-color: var(--card);
+    border-radius: var(--border-radius-lg);
+    border: var(--border-width) solid var(--border);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: var(--transition-colors);
+  }
+  
+  .calculator-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-4);
+    border-bottom: var(--border-width) solid var(--border);
+  }
+  
+  .calculator-header h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--foreground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    transition: var(--transition-colors);
+  }
+  
+  .theme-toggle:hover {
+    background-color: var(--accent);
+  }
+  
+  .light-icon,
+  .dark-icon {
+    font-size: 1.25rem;
+  }
+  
+  [data-theme="dark"] .light-icon,
+  :root:not([data-theme="dark"]) .dark-icon {
+    display: none;
+  }
+  
+  /* Histórico */
+  .calculator-history {
+    padding: var(--spacing-2) var(--spacing-4);
+    min-height: 1.5rem;
+    border-bottom: var(--border-width) solid var(--border);
+  }
+  
+  .history-display {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--foreground);
+    opacity: 0.7;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  /* Display */
+  .calculator-display {
+    padding: var(--spacing-4);
+    border-bottom: var(--border-width) solid var(--border);
+  }
+  
+  .display {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* Botões */
+  .calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-2);
+    padding: var(--spacing-4);
+  }
+  
+  .btn {
+    width: 100%;
+    height: var(--button-size);
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid var(--border);
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-colors);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn:hover {
+    background-color: var(--secondary-hover);
+  }
+  
+  .btn:active {
+    transform: translateY(1px);
+  }
+  
+  .btn-operation {
+    background-color: var(--operation);
+    color: var(--operation-foreground);
+  }
+  
+  .btn-operation:hover {
+    background-color: var(--operation-hover);
+  }
+  
+  .btn-equals {
+    background-color: var(--equals);
+    color: var(--equals-foreground);
+  }
+  
+  .btn-equals:hover {
+    background-color: var(--equals-hover);
+  }
+  
+  .btn-clear {
+    background-color: var(--clear);
+    color: var(--clear-foreground);
+  }
+  
+  .btn-clear:hover {
+    background-color: var(--clear-hover);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 480px) {
+    .container {
+      padding: var(--spacing-2);
+    }
+  
+    .calculator-buttons {
+      gap: var(--spacing-1);
+    }
+  
+    .btn {
+      height: 3rem;
+      font-size: 1.125rem;
+    }
+  
+    .display {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .btn {
+      height: 2.75rem;
+      font-size: 1rem;
+    }
+  
+    .display {
+      font-size: 1.75rem;
+    }
+  }
+  

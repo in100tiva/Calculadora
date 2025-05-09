@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="calculator-header">
+                <h1>Calculadora</h1>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+                    <span class="material-icons light-icon">
+                        light_mode
+                    </span>
+                    <span class="material-icons dark-icon">
+                        dark_mode
+                    </span>
+                </button>
+            </div>
+
+            <div class="calculator-history">
+                <div id="history-display"></div>
+            </div>
+
+            <div class="calculator-display">
+                <div id="display" class="display">0</div>
+            </div>
+
+            <div class="calculator-buttons">
+                <button class="btn btn-clear" data-action="clear">C</button>
+                <button class="btn btn-operation" data-action="backspace">
+                    <span class="material-icons">backspace</span>
+                </button>
+                <button class="btn btn-operation" data-action="percent">%</button>
+                <button class="btn btn-operation" data-action="/">÷</button>
+
+                <button class="btn" data-action="7">7</button>
+                <button class="btn" data-action="8">8</button>
+                <button class="btn" data-action="9">9</button>
+
+                <button class="btn btn-operation" data-action="*">x</button>
+
+                <button class="btn" data-action="4">4</button>
+                <button class="btn" data-action="5">5</button>
+                <button class="btn" data-action="6">6</button>
+
+                <button class="btn btn-operation" data-action="-">-</button>
+
+                <button class="btn" data-action="1">1</button>
+                <button class="btn" data-action="2">2</button>
+                <button class="btn" data-action="3">3</button>
+
+                <button class="btn btn-operation" data-action="+">+</button>
+
+                <button class="btn btn-operation" data-action="sqrt">√</button>
+
+                <button class="btn" data-action="0">0</button>
+                <button class="btn" data-action=".">.</button>
+
+                <button class="btn btn-equal" data-action="calculate">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/display.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/theme-switch.js"></script>
+    
+</body>
+
+</html>

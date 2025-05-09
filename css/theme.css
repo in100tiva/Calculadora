@@ -1,0 +1,102 @@
+/* Tema Claro (padrão) */
+:root {
+    /* Cores base */
+    --background: #ffffff;
+    --foreground: #0f172a;
+  
+    /* Cores da interface */
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --popover: #ffffff;
+    --popover-foreground: #0f172a;
+  
+    /* Cores primárias */
+    --primary: #6366f1;
+    --primary-foreground: #ffffff;
+    --primary-hover: #4f46e5;
+  
+    /* Cores secundárias */
+    --secondary: #f1f5f9;
+    --secondary-foreground: #0f172a;
+    --secondary-hover: #e2e8f0;
+  
+    /* Cores de destaque */
+    --accent: #f8fafc;
+    --accent-foreground: #0f172a;
+  
+    /* Cores de borda */
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+  
+    /* Cores de estado */
+    --ring: #6366f1;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+  
+    /* Cores de operação */
+    --operation: #f8fafc;
+    --operation-foreground: #6366f1;
+    --operation-hover: #e2e8f0;
+  
+    /* Cores de resultado */
+    --equals: #6366f1;
+    --equals-foreground: #ffffff;
+    --equals-hover: #4f46e5;
+  
+    /* Cores de limpar */
+    --clear: #fee2e2;
+    --clear-foreground: #ef4444;
+    --clear-hover: #fecaca;
+  }
+  
+  /* Tema Escuro */
+  [data-theme="dark"] {
+    /* Cores base */
+    --background: #0f172a;
+    --foreground: #f8fafc;
+  
+    /* Cores da interface */
+    --card: #1e293b;
+    --card-foreground: #f8fafc;
+    --popover: #1e293b;
+    --popover-foreground: #f8fafc;
+  
+    /* Cores primárias */
+    --primary: #6366f1;
+    --primary-foreground: #ffffff;
+    --primary-hover: #818cf8;
+  
+    /* Cores secundárias */
+    --secondary: #334155;
+    --secondary-foreground: #f8fafc;
+    --secondary-hover: #475569;
+  
+    /* Cores de destaque */
+    --accent: #1e293b;
+    --accent-foreground: #f8fafc;
+  
+    /* Cores de borda */
+    --border: #334155;
+    --input: #334155;
+  
+    /* Cores de estado */
+    --ring: #6366f1;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+  
+    /* Cores de operação */
+    --operation: #334155;
+    --operation-foreground: #818cf8;
+    --operation-hover: #475569;
+  
+    /* Cores de resultado */
+    --equals: #6366f1;
+    --equals-foreground: #ffffff;
+    --equals-hover: #818cf8;
+  
+    /* Cores de limpar */
+    --clear: #7f1d1d;
+    --clear-foreground: #fecaca;
+    --clear-hover: #991b1b;
+  }
+  
