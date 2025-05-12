@@ -1,4 +1,4 @@
-class display {
+class Display {
     constructor() {
         this.displayElement = document.getElementById("display")
         this.historyElement = document.getElementById("history-display")
