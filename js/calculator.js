@@ -30,9 +30,33 @@ class Calculator {
 
         document.querySelectorAll("data-action").forEach((button) => {
             button.addEventListener("click", () => {
-               
+               const action = button.dataset.action
+
+               switch (action) {
+                case "clear":
+                    this.clear()
+                    break;
+
+                case "calculate":
+                    this.calculate()
+                    break;
+                   
+                case "backspace":
+                    this.backspace()
+                    break;
+                
+                case "percent":
+                    this.percent()
+                    break;
+                
+                case "sqrt":
+                    this.squareRoot()
+                    break;
+               }
             })
         })
+
+        
 
 
     }
