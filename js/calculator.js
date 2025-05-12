@@ -1,4 +1,4 @@
-import {display} from './display.js'
+import {Display} from './display.js'
 import {getOperatorSymbol} from 'utils.js'
 import {formatNumber} from 'utils.js'
 
@@ -84,5 +84,37 @@ class Calculator {
         this.shouldResetDisplay = true
 
         this.display.updateHistory(`${this.previusOperand} ${getOperatorSymbol(this.operation)}`)
+    }
+
+    calculate() {
+        if (this.operation === null || this.shouldResetDisplay || this.currentOperand === "Erro") return
+
+        const prev = Number.parseFloat(this.previusOperand)
+        const current = Number.parseFloat(this.currentOperand)
+        let result
+
+        switch (this.operation) {
+            case "+":
+                result = prev + current
+                break
+
+            case "-":
+                result = prev - current
+                break
+
+            case "*":
+                result = prev * current
+                break
+
+            case "/":
+                if (current === 0) {
+                    result = "Erro"
+                } else {
+                    result = prev / current
+                }
+                break
+            default:
+                return
+        }
     }
 }
