@@ -56,8 +56,33 @@ class Calculator {
             })
         })
 
-        
+        document.addEventListener("keydown", (event) => {
+            this.handleKeyboardInput(event)
+        })
+    }
 
+    appendNumber(number) {
+        if (this.shouldResetDisplay) {
+            this.display.updateDisplay("")
+            this.shouldResetDisplay = false
+        }
 
+        this.display.appendDigit(number)
+        this.currentOperand = this.display.currentValue
+    }
+
+    chooseOperation(operation) {
+        if (this.currentOperand === "erro")
+            return
+
+        if (this.operation !== null && !this.shouldResetDisplay) {
+            this.calculate()
+        }
+
+        this.previusOperand = this.currentOperand
+        this. operation = operation
+        this.shouldResetDisplay = true
+
+        this.display.updateHistory(`${this.previusOperand} ${getOperatorSymbol(this.operation)}`)
     }
 }
