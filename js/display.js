@@ -1,45 +1,55 @@
+/**
+ * Gerenciamento do display da calculadora
+ */
+
 class Display {
-    constructor() {
-        this.displayElement = document.getElementById("display")
-        this.historyElement = document.getElementById("history-display")
-        this.currentValue = 0
-        this.history = ""
+  constructor() {
+    this.displayElement = document.getElementById("display")
+    this.historyElement = document.getElementById("history-display")
+    this.currentValue = "0"
+    this.history = ""
+  }
+
+  // Atualiza o display principal
+  updateDisplay(value = this.currentValue) {
+    this.currentValue = value
+    this.displayElement.textContent = value
+  }
+
+  // Atualiza o histórico
+  updateHistory(value = this.history) {
+    this.history = value
+    this.historyElement.textContent = value
+  }
+
+  // Limpa o display e o histórico
+  clear() {
+    this.updateDisplay("0")
+    this.updateHistory("")
+  }
+
+  // Adiciona um dígito ao display
+  appendDigit(digit) {
+    // Se o valor atual for '0', substitua-o pelo dígito (exceto para o ponto decimal)
+    if (this.currentValue === "0" && digit !== ".") {
+      this.updateDisplay(digit)
     }
-
-    updateDisplay(value = this.currentValue) {
-        this.currentValue = value
-        this.displayElement.textContent = value
+    // Se já houver um ponto decimal, não adicione outro
+    else if (digit === "." && this.currentValue.includes(".")) {
+      return
     }
-
-    updateHistory(value = this.history) {
-        this.currentValue = value
-        this.historyElement.textContent = value
+    // Caso contrário, adicione o dígito ao valor atual
+    else {
+      this.updateDisplay(this.currentValue + digit)
     }
+  }
 
-    clear() {
-        this.updateDisplay("0")
-        this.updateHistory("")
+  // Remove o último dígito do display
+  removeLastDigit() {
+    if (this.currentValue.length === 1) {
+      this.updateDisplay("0")
+    } else {
+      this.updateDisplay(this.currentValue.slice(0, -1))
     }
-
-    appendDigit(digit) {
-        if (this.currentValue === "0" && digit !== "."){
-            this.updateDisplay(digit)
-        }
-
-        else if (digit === "." && this.currentValue.includes(".")) {
-            return
-        }
-
-        else {
-            this.updateDisplay(this.currentValue + digit)
-        }
-    }
-
-    removeLastDigit() {
-        if (this.currentValue.length === 1) {
-            this.updateDisplay("0")
-        } else {
-            this.updateDisplay(this.currentValue.slice(0, -1))
-        }
-    }
-}  
+  }
+}
